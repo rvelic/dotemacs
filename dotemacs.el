@@ -26,4 +26,4 @@
 (require 'server)
 (server-start)
 
-(load "~/.emacs.d/.emacs-engineer.el")
+(load ".engineer.el")
