@@ -1,7 +1,18 @@
 (require 'package)
-(add-to-list 'package-archives'("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
 
+;;; Fetch packages
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")))
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+  
+;;; Install required packages
+(setq package-list '(magit helm helm-projectile))
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;;; General configuration
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome") 
 
