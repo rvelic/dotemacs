@@ -26,4 +26,4 @@
 (require 'server)
 (server-start)
 
-(load ".engineer.el")
+(load "engineer.el")
