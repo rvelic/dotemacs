@@ -31,7 +31,7 @@
  '(inhibit-startup-screen t)
  '(magit-fetch-arguments (quote ("--prune"))))
 (custom-set-faces)
-(set-face-attribute 'default' nil :height 130)
+(set-face-attribute 'default' nil :height 160)
 
 (load-theme 'wombat t)
 
