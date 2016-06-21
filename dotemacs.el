@@ -21,7 +21,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(toggle-frame-fullscreen)
 
 (setq-default auto-save-default nil)
 (setq make-backup-files nil)
