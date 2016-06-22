@@ -9,7 +9,7 @@
   (package-refresh-contents))
 
 ;;; Install required packages
-(setq package-list '(magit helm helm-projectile helm-ls-git yaml-mode))
+(setq package-list '(magit helm helm-projectile helm-ls-git yaml-mode powershell))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
