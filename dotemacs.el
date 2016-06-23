@@ -9,7 +9,7 @@
   (package-refresh-contents))
 
 ;;; Install required packages
-(setq package-list '(magit helm helm-projectile helm-ls-git yaml-mode powershell))
+(setq package-list '(magit helm helm-projectile helm-ls-git yaml-mode powershell wgrep))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -31,7 +31,7 @@
  '(inhibit-startup-screen t)
  '(magit-fetch-arguments (quote ("--prune"))))
 (custom-set-faces)
-(set-face-attribute 'default' nil :height 160)
+(set-face-attribute 'default' nil :height 140)
 
 (load-theme 'wombat t)
 
@@ -45,6 +45,8 @@
 (setq-default tab-width 2)
 (setq c-basic-offset 2)
 (electric-pair-mode 1)
+
+(require 'wgrep)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
