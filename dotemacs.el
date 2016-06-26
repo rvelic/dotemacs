@@ -30,9 +30,8 @@
 (custom-set-variables
  '(inhibit-startup-screen t)
  '(magit-fetch-arguments (quote ("--prune"))))
-(custom-set-faces)
-(set-face-attribute 'default' nil :height 140)
 
+(set-frame-font "Inconsolata-18")
 (load-theme 'wombat t)
 
 (require 'server)
