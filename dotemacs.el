@@ -9,7 +9,7 @@
   (package-refresh-contents))
 
 ;;; Install required packages
-(setq package-list '(magit helm helm-projectile helm-ls-git yaml-mode powershell wgrep markdown-preview-mode))
+(setq package-list '(magit helm helm-projectile helm-ls-git yaml-mode powershell wgrep markdown-preview-mode js2-mode helm-descbinds multiple-cursors))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -32,10 +32,15 @@
  '(magit-fetch-arguments (quote ("--prune"))))
 
 (set-frame-font "Inconsolata-18")
-(load-theme 'wombat t)
+(load-theme 'deeper-blue t)
 
 (require 'server)
 (server-start)
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;;; DEVELOPMENT
 
@@ -71,6 +76,9 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-z") 'helm-select-action)
 (setq helm-split-window-in-side-p t)
+
+(require 'helm-descbinds)
+(helm-descbinds-mode)
 
 ;;; Projectile
 (require 'helm-projectile)
