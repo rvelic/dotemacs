@@ -86,6 +86,15 @@
 (helm-projectile-on)
 (setq projectile-switch-project-action 'helm-ls-git-ls)
 
+;;; Ignore '/'
+
+;; On unix based systems, / is the root path. So all string starts with / is recognized as a path. This is annoying especially when editing HTML or XML. The following advice ignore / as a wrong result.
+(defadvice ffap-file-at-point (after ffap-file-at-point-after-advice ())
+  (if (string= ad-return-value "/")
+      (setq ad-return-value nil)))
+(ad-activate 'ffap-file-at-point)
+;; (ad-deactivate 'ffap-file-at-point)
+
 ;;; YASnippets
 ;;; (require 'yasnippet)
 ;;; (yas-global-mode t)
