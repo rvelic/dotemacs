@@ -3,7 +3,7 @@
 (require 'package)
 
 ;;; Fetch packages
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
