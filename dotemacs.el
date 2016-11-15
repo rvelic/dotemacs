@@ -9,7 +9,7 @@
   (package-refresh-contents))
 
 ;;; Install required packages
-(setq package-list '(magit helm helm-projectile helm-ls-git yaml-mode powershell wgrep markdown-preview-mode js2-mode helm-descbinds multiple-cursors))
+(setq package-list '(magit helm helm-projectile helm-ls-git yaml-mode powershell wgrep markdown-preview-mode js2-mode helm-descbinds multiple-cursors cider paredit))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -85,6 +85,9 @@
 (projectile-global-mode)
 (helm-projectile-on)
 (setq projectile-switch-project-action 'helm-ls-git-ls)
+
+;;; Clojure
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 ;;; Ignore '/'
 
